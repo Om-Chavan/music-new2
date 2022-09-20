@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+
+    <header class="text-gray-600 body-font">
+        <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+          <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+            <img id="headerimg" src="./ProgrammerOm.jpg"  style="border-radius: 200px;">
+            </img>
+            <span class="ml-3 text-xl">ProgrammerOm</span>
+          </a>
+          <nav class="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center">
+            <a class="mr-5 hover:text-gray-900" href="#">First Link</a>
+            <a class="mr-5 hover:text-gray-900" href="#">Second Link</a>
+            <a class="mr-5 hover:text-gray-900" href="#">Third Link</a>
+            <a class="mr-5 hover:text-gray-900" href="#">Fourth Link</a>
+          </nav>
+
+          <!-- <button class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0">Button
+            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-1" viewBox="0 0 24 24">
+              <path d="M5 12h14M12 5l7 7-7 7"></path>
+            </svg>
+          </button> -->
+        </div>
+      </header>
+
+
+
+<style>
+    a{
+        border: solid;
+        border-radius: 100px;
+        padding: 5px;
+    }
+    div{
+        width: 60%;
+        border: solid;
+    }
+    audio{
+        width: 60%;
+        border: solid;
+    }
+
+    header img{
+        width: 80px;
+    }
+
+    img{
+        width: 100%;
+        height: 100%;
+        /* border:solid; */
+    }
+    button{
+        height: 50px;
+        width: 200px;
+    }
+</style>
+    <script>
+        // Your web app's Firebase configuration
+var firebaseConfig = {
+  apiKey: "AIzaSyAEsU0vhybpjKsE5SovDTl7vjGNQcieX_c",
+  authDomain: "songs-73646.firebaseapp.com",
+  projectId: "songs-73646",
+  storageBucket: "songs-73646.appspot.com",
+  messagingSenderId: "249010135559",
+  appId: "1:249010135559:web:7aff7b5402f5bca4b080a2"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+
+   
+
+function Excuses_play() {
+    console.log("Excuses playing"); 
+    var audio = document.getElementById("Pasoori")
+    audio.pause();
+ 
+  }
+
+
+  function Excuses_pause(){
+    // var x = document.getElementById("Pasoori").play();
+    console.log("Excuses stoped");     
+  }
+
+
+
+function Pasoori_play() {
+    console.log("Pasoori playing");
+    var audio = document.getElementById("Excuses")
+    audio.pause(); 
+    
+  }
+
+
+  function Pasoori_pause(){
+    console.log("Pasoori stoped"); 
+  }
+
+
+
+
+  function Next (){    
+    console.log("button");
+    document.getElementById("song1").style.display="none";
+    document.getElementById("song2").style.display="block";
+    document.getElementById("but_next").style.display="none";
+    document.getElementById("but_back").style.display="block";
+
+    
+  }
+
+  function Back (){    
+    console.log("button");
+    document.getElementById("song1").style.display="block";
+    document.getElementById("song2").style.display="none";
+    document.getElementById("but_next").style.display="block";
+    document.getElementById("but_back").style.display="none";
+  }
+
+
+// var audio = document.getElementById("myaudio");
+
+//   if(audio == audio.play()){
+//     console.log("playing");
+// }
+
+
+
+
+
+
+
+
+
+
+
+//  function play(){
+//  var audio = document.getElementById("myaudio");
+//  audio.play();
+//     document.getElementById("play").style.display="none";
+//     document.getElementById("pause").style.display="block";
+    
+// }
+
+// function pause(){
+//     var audio = document.getElementById("myaudio");
+//     audio.pause();
+
+//     document.getElementById("pause").style.display="none";
+
+// } 
+
+    </script>
+
+
+    <title>Document</title>
+</head>
+
+<body><center>
+
+
+    
+    <div class="song1" id="song1">
+
+    <img
+        src="https://firebasestorage.googleapis.com/v0/b/songs-73646.appspot.com/o/images%2Fexcuse.jpg?alt=media&token=2e9f26fd-bbe4-4889-a822-51f203791b54" alt="Excuses Image">
+
+<br>
+
+    <audio id="Excuses" controls onplay="Excuses_play()" onpause="Excuses_pause()">
+        <source
+            src="https://firebasestorage.googleapis.com/v0/b/songs-73646.appspot.com/o/Excuses.mp3?alt=media&token=e27559bd-4d29-42ff-9ec0-5de21a3e0cf4"
+            type="audio/mpeg">
+    </audio>
+    </div>
+<br>
+    <button id="but_next" onclick="Next()">Next</button>
+<br><br>
+<div class="song2" id="song2" style="display:none" >
+    <img
+        src="https://firebasestorage.googleapis.com/v0/b/songs-73646.appspot.com/o/images%2Fpasoori.jpg?alt=media&token=e8654b0e-f25c-404e-9db6-6c9b4786c1cc" alt="Pasoori Image">
+
+        <br>
+
+
+    <audio id="Pasoori" controls onplay="Pasoori_play()" onpause="Pasoori_pause()">
+
+        <source 
+            src="https://firebasestorage.googleapis.com/v0/b/songs-73646.appspot.com/o/Pasoori.mp3?alt=media&token=99add130-4e55-43d8-9b06-a1f50c3e2dd9"
+            type="audio/mpeg">
+    </audio>
+</div>
+<br>
+<button id="but_back" onclick="Back()" style="display: none" >Back</button>
+
+
+    <!-- 
+    <input type="button" value="Play" id="play" onclick="play()">
+    <input style="display:none;" type="button" value="Pause" id="pause" onclick="pause()" style="display: none;"></input> 
+-->
+
+
+</body></center>
+
+</html>
